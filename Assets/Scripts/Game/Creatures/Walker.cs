@@ -39,8 +39,10 @@ public class Walker : Carriable, BullTrigger, ChargeConductor, Awakable
     public void OnCollisionEnter2D(Collision2D other)
     {
         base.OnCollisionEnter2D(other);
+        Debug.Log("Collision detected");
         if (other.gameObject.layer == Layers.WALL || other.gameObject.layer == Layers.CREATURES)
         {
+            Debug.Log("With wall");
             direction *= -1;    
         }
 

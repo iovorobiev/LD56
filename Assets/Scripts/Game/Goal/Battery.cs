@@ -20,7 +20,7 @@ public class Battery : MonoBehaviour
 
     public void NextLevel()
     {
-        StartCoroutine(SceneLoader.LoadSceneAsync(currentLevel++));
+        StartCoroutine(SceneLoader.LoadSceneAsync(currentLevel+1));
     }
     
     public void OnCollisionEnter2D(Collision2D other)

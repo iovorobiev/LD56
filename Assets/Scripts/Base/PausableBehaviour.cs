@@ -6,7 +6,12 @@ namespace Base
     public class PausableBehaviour : MonoBehaviour
     {
         public static bool paused;
-        
+
+        private void Awake()
+        {
+            paused = false;
+        }
+
         void Update()
         {
             if (paused)

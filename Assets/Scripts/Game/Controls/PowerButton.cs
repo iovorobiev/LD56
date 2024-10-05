@@ -18,8 +18,10 @@ public class PowerButton : PausableBehaviour
     public override void PausableUpdate()
     {
         base.PausableUpdate();
+        Debug.Log("Pausable update");
         if (clickCooldown < clickAllowedInterval)
         {
+            Debug.Log("clocks");
             clickCooldown += Time.deltaTime;
             return;
         }
@@ -65,8 +67,10 @@ public class PowerButton : PausableBehaviour
         {
             return false;
         }
+        
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         var hit = Physics2D.Raycast(ray.origin, ray.direction);
+        Debug.Log("Mouse button " + hit.collider.gameObject);
         if (hit.collider != null && hit.collider.gameObject == gameObject)
         {
             clickCooldown = 0f;
