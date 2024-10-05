@@ -12,6 +12,7 @@ namespace Game.Creatures
         
         public virtual void takenByBull(Bull carryingBull)
         {
+            Debug.Log("Taken by bull " + carryingBull);
             _bull = carryingBull;
             originalParent = transform.parent;
             transform.parent = carryingBull.transform;
@@ -33,20 +34,20 @@ namespace Game.Creatures
             }
             if (_bull != null)
             {
+                
                 _bull.onCarriedMetCollision();
-                return;
             }
         }
 
 
         public virtual void AwakeAndWork()
         {
-            Debug.Log("Carriable awaking");
             // Do nothing
         }
 
         public virtual void ResetPositionAndState()
         {
+            Debug.Log("Resetting pos and state");
             transform.parent = originalParent;
             _bull = null;
         }

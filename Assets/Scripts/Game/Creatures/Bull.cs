@@ -124,7 +124,6 @@ public class Bull : Draggable, Awakable
         carryingCreature.releasedByBull();
         var closestPos = grid.WorldToCell(transform.position);
         transform.position =  grid.GetCellCenterWorld(closestPos);
-        // transform.position = grid.CellToWorld(closestPos);
     }
 
     public void AwakeAndWork()
