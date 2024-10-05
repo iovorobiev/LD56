@@ -7,13 +7,14 @@ using Game.Creatures;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using Utils;
 
-public class Bull : PausableBehaviour, Awakable
+public class Bull : Draggable, Awakable
 {
 
     public float speed = 0f;
     
-    public Tilemap grid;
+    
     public Mode currentMode = Mode.SLEEP;
     private Vector3 direction = Vector3.zero;
 
@@ -25,6 +26,10 @@ public class Bull : PausableBehaviour, Awakable
     {
         originalParent = transform.parent;
         originalPosition = transform.position;
+        if (currentMode == Mode.AWAITING)
+        {
+            setDraggableActive(true);
+        }
     }
 
     public override void PausableUpdate()
@@ -61,7 +66,7 @@ public class Bull : PausableBehaviour, Awakable
     private bool FindTrigger(Vector3 searchDirection)
     {
         // Everything except bull itself
-        int layermask = 0xFFFFFF ^ (1 << Layers.BULL);
+        int layermask = LayersHelper.GetAllLayersExcept(Layers.BULL);
         RaycastHit2D hit = Physics2D.Raycast(transform.position, searchDirection,  Mathf.Infinity, layermask);
         if (hit.collider != null && checkHit(hit.collider))
         {
@@ -87,6 +92,7 @@ public class Bull : PausableBehaviour, Awakable
     {
         if (other.gameObject.layer == Layers.WALL || other.gameObject.layer == Layers.BULL)
         {
+            Debug.Log("Switching mode to idle");
             currentMode = Mode.IDLE;
         }
 
@@ -133,7 +139,13 @@ public class Bull : PausableBehaviour, Awakable
         transform.position = originalPosition;
         transform.parent = originalParent;
     }
-    
+
+    public override void SettleAtTile(Vector3 getCellCenterWorld)
+    {
+        base.SettleAtTile(getCellCenterWorld);
+        currentMode = Mode.SLEEP;
+    }
+
     public enum Mode
     {
         IDLE,

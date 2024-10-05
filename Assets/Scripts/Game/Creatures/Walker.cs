@@ -12,7 +12,7 @@ public class Walker : Carriable, BullTrigger, ChargeConductor, Awakable
     public Vector3 direction;
     public bool triggersBull;
 
-    private Mode currentMode = Mode.SLEEP;
+    public Mode currentMode = Mode.SLEEP;
     private GameObject charge;
 
     private Vector3 originalPosition;
@@ -20,6 +20,10 @@ public class Walker : Carriable, BullTrigger, ChargeConductor, Awakable
     private void Start()
     {
         originalPosition = transform.position;
+        if (currentMode == Mode.AWAITING)
+        {
+            setDraggableActive(true);
+        }
     }
 
     public override void PausableUpdate()
@@ -79,12 +83,13 @@ public class Walker : Carriable, BullTrigger, ChargeConductor, Awakable
         currentMode = Mode.WALKING;
     }
 
-    enum Mode
+    public enum Mode
     {
         WALKING,
         IDLE,
         CARRIED,
         SLEEP,
+        AWAITING,
     }
 
     public bool hasCharge()

@@ -6,5 +6,6 @@ namespace Game
         public static int CREATURES = 6;
         public static int BULL = 7;
         public static int CHARGE = 8;
+        public static int GHOST = 9;
     }
 }

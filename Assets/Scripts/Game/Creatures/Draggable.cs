@@ -1,24 +1,107 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
 using Base;
+using Unity.VisualScripting;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
+using UnityEngine.Tilemaps;
+using Utils;
 
 namespace Game.Creatures
 {
     public class Draggable : PausableBehaviour
     {
-        public bool DetectClick()
+        private float speedBack = 1f;
+        public Tilemap grid;
+        public PowerButton powerButton;
+
+        private int originalLayer;
+        private Vector3 startPosition;
+        private bool isDragging;
+        private bool isActive;
+
+        public void setDraggableActive(bool active)
         {
-            if (!Input.GetMouseButtonDown(0))
+            isActive = active;
+            originalLayer = gameObject.layer;
+            startPosition = transform.position;
+        }
+
+        private void OnMouseEnter()
+        {
+            Debug.Log("Mouse enter");
+        }
+
+        private void OnMouseDown()
+        {
+            if (!isActive) return;
+            handleDragStart();
+        }
+
+        protected virtual void handleDragStart()
+        {
+            gameObject.layer = Layers.GHOST;
+            isDragging = true;
+            powerButton.RemoveCreature(gameObject);
+        }
+
+        private void OnMouseDrag()
+        {
+            if (!isDragging || !isActive) return;
+            var mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            transform.position = new Vector3(mousePos.x, mousePos.y, transform.position.z);
+        }
+
+        private void OnMouseUp()
+        {
+            if (!isDragging || !isActive) return;
+            var closestPos = grid.WorldToCell(transform.position);
+            if (grid.HasTile(closestPos))
             {
-                return false;
+                var layerMask = LayersHelper.GetAllLayersExcept(Layers.GHOST);
+                RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector3.forward, Mathf.Infinity, layerMask);
+                if (hit.collider != null)
+                {
+                    Debug.Log(hit.collider.gameObject);
+                    StartCoroutine(FlyBack());
+                }
+                else
+                {
+                    SettleAtTile(grid.GetCellCenterWorld(closestPos));
+                }
             }
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            var hit = Physics2D.Raycast(ray.origin, ray.direction);
-            if (hit.collider.gameObject == gameObject)
+            else
             {
-                return true;
+                StartCoroutine(FlyBack()); 
+            }
+        }
+
+        public virtual void SettleAtTile(Vector3 getCellCenterWorld)
+        {
+            isActive = true;
+            isDragging = false;
+            gameObject.layer = originalLayer;
+            transform.position = getCellCenterWorld;
+            powerButton.AddCreature(gameObject);
+
+        }
+
+        IEnumerator FlyBack()
+        {
+            isActive = false;
+            var time = 0f;
+            while (time < 1f)
+            {
+                time += speedBack * Time.deltaTime;
+                var position = Vector3.Lerp(transform.position, startPosition, time);
+                transform.position = position;
+                yield return new WaitForNextFrameUnit();
             }
 
-            return false;
+            isActive = true;
+            isDragging = false;
+            gameObject.layer = originalLayer;
         }
     }
 }

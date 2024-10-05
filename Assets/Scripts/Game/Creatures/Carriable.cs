@@ -5,10 +5,8 @@ using UnityEngine.Tilemaps;
 
 namespace Game.Creatures
 {
-    public class Carriable : PausableBehaviour, Awakable
+    public class Carriable : Draggable, Awakable
     {
-        public Tilemap grid;
-        
         private Bull _bull;
         private Transform originalParent;
         
