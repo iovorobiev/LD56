@@ -1,12 +1,7 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using Base;
+
 using Game;
 using Game.Creatures;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
-using UnityEngine.Tilemaps;
 using Utils;
 
 public class Bull : Draggable, Awakable
@@ -98,6 +93,10 @@ public class Bull : Draggable, Awakable
 
         if (other.gameObject.layer == Layers.CREATURES)
         {
+            if (currentMode != Mode.CHARGE)
+            {
+                return;
+            }
             onCreatureTaken(other.gameObject.GetComponent<Carriable>());
         }
     }
@@ -121,6 +120,7 @@ public class Bull : Draggable, Awakable
     public void onCarriedMetCollision()
     {
         currentMode = Mode.FINISHED;
+        gameObject.layer = Layers.CREATURES;
         carryingCreature.releasedByBull();
         var closestPos = grid.WorldToCell(transform.position);
         transform.position =  grid.GetCellCenterWorld(closestPos);

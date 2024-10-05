@@ -40,17 +40,18 @@ public class Walker : Carriable, BullTrigger, ChargeConductor, Awakable
     {
         base.OnCollisionEnter2D(other);
         Debug.Log("Collision detected");
-        if (other.gameObject.layer == Layers.WALL || other.gameObject.layer == Layers.CREATURES)
+        if (other.gameObject.layer == Layers.WALL || other.gameObject.layer == Layers.CREATURES || other.gameObject.layer == Layers.BULL)
         {
             Debug.Log("With wall");
             direction *= -1;    
         }
-
-        if (other.gameObject.layer == Layers.BULL)
-        {
-            currentMode = Mode.CARRIED;
-        }
         
+    }
+
+    public override void takenByBull(Bull carryingBull)
+    {
+        base.takenByBull(carryingBull);
+        currentMode = Mode.CARRIED;
     }
 
     public void OnTriggerEnter2D(Collider2D other)
