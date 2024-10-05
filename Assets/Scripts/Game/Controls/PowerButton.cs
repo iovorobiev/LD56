@@ -6,6 +6,7 @@ using Game;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.PlayerLoop;
+using Utils;
 
 public class PowerButton : PausableBehaviour
 {
@@ -14,14 +15,13 @@ public class PowerButton : PausableBehaviour
     private bool awaken;
     private float clickCooldown;
     private float clickAllowedInterval = 0.3f;
+    public Battery battery;
 
     public override void PausableUpdate()
     {
         base.PausableUpdate();
-        Debug.Log("Pausable update");
         if (clickCooldown < clickAllowedInterval)
         {
-            Debug.Log("clocks");
             clickCooldown += Time.deltaTime;
             return;
         }
@@ -33,6 +33,11 @@ public class PowerButton : PausableBehaviour
 
     private void toggleAwake()
     {
+        if (awaken)
+        {
+            StartCoroutine(SceneLoader.LoadSceneAsync(battery.currentLevel));
+            return;
+        }
         foreach (var creature in creatures)
         {
             var awakable = creature.GetComponent<Awakable>();
@@ -70,7 +75,6 @@ public class PowerButton : PausableBehaviour
         
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         var hit = Physics2D.Raycast(ray.origin, ray.direction);
-        Debug.Log("Mouse button " + hit.collider.gameObject);
         if (hit.collider != null && hit.collider.gameObject == gameObject)
         {
             clickCooldown = 0f;

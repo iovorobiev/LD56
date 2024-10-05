@@ -24,6 +24,11 @@ public class PauseManager : MonoBehaviour
 
     private void OnEnable()
     {
+        if (controls == null)
+        {
+            Debug.Log("Controls null");
+            return;
+        }
         pauseAction = controls.Game.Menu;
         pauseAction.Enable();
     }
