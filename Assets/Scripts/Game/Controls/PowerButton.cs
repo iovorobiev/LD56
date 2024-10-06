@@ -12,7 +12,7 @@ public class PowerButton : PausableBehaviour
 {
     public List<GameObject> creatures;
 
-    private bool awaken;
+    public bool awaken;
     private float clickCooldown;
     private float clickAllowedInterval = 0.3f;
     public Battery battery;

@@ -39,7 +39,7 @@ namespace Game.Creatures
 
         private void OnMouseDown()
         {
-            if (!isActive) return;
+            if (!isActive || powerButton.awaken) return;
             handleDragStart();
         }
 
