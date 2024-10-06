@@ -16,6 +16,7 @@ public class PowerButton : PausableBehaviour
     private float clickCooldown;
     private float clickAllowedInterval = 0.3f;
     public Battery battery;
+    public PageSwitcher pageSwitcher;
 
     public override void PausableUpdate()
     {

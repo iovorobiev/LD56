@@ -113,6 +113,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   grid: {fileID: 0}
   powerButton: {fileID: 0}
+  pageIndex: 3
   speed: 5
   currentMode: 3
 --- !u!61 &9058153653877366181

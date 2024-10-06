@@ -13,6 +13,7 @@ namespace Game.Creatures
         private float speedBack = 1f;
         public Tilemap grid;
         public PowerButton powerButton;
+        public int pageIndex;
 
         private int originalLayer;
         private Vector3 startPosition;
@@ -34,13 +35,18 @@ namespace Game.Creatures
 
         private void OnMouseEnter()
         {
-            Debug.Log("Mouse enter");
+            powerButton.pageSwitcher.ShowPage(pageIndex);
         }
 
         private void OnMouseDown()
         {
             if (!isActive || powerButton.awaken) return;
             handleDragStart();
+        }
+
+        private void OnMouseExit()
+        {
+            powerButton.pageSwitcher.ShowDefault();
         }
 
         protected virtual void handleDragStart()

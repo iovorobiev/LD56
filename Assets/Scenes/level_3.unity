@@ -527,6 +527,14 @@ PrefabInstance:
       value: Power Button (1)
       objectReference: {fileID: 0}
     - target: {fileID: 9195735890340906114, guid: a64a0dae97978a247a43e847686e3614, type: 3}
+      propertyPath: battery
+      value: 
+      objectReference: {fileID: 1044004069}
+    - target: {fileID: 9195735890340906114, guid: a64a0dae97978a247a43e847686e3614, type: 3}
+      propertyPath: pageSwitcher
+      value: 
+      objectReference: {fileID: 1864005438}
+    - target: {fileID: 9195735890340906114, guid: a64a0dae97978a247a43e847686e3614, type: 3}
       propertyPath: creatures.Array.size
       value: 3
       objectReference: {fileID: 0}
@@ -3251,6 +3259,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 818b15a6fe627f44eb21b17f154ac5b6, type: 3}
+--- !u!114 &1864005438 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6382739537886711123, guid: 818b15a6fe627f44eb21b17f154ac5b6, type: 3}
+  m_PrefabInstance: {fileID: 1864005437}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0716d53b4d26b3245ac4e9492c24b5dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1903062401
 GameObject:
   m_ObjectHideFlags: 0

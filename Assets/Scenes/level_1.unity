@@ -3034,6 +3034,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 818b15a6fe627f44eb21b17f154ac5b6, type: 3}
+--- !u!114 &6381762807854082456 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6382739537886711123, guid: 818b15a6fe627f44eb21b17f154ac5b6, type: 3}
+  m_PrefabInstance: {fileID: 6381762807854082455}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0716d53b4d26b3245ac4e9492c24b5dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &6836903025182111565
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3155,6 +3166,10 @@ PrefabInstance:
       propertyPath: battery
       value: 
       objectReference: {fileID: 1044004069}
+    - target: {fileID: 9195735890340906114, guid: a64a0dae97978a247a43e847686e3614, type: 3}
+      propertyPath: pageSwitcher
+      value: 
+      objectReference: {fileID: 6381762807854082456}
     - target: {fileID: 9195735890340906114, guid: a64a0dae97978a247a43e847686e3614, type: 3}
       propertyPath: creatures.Array.data[0]
       value: 

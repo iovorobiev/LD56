@@ -140,6 +140,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   grid: {fileID: 0}
   powerButton: {fileID: 0}
+  pageIndex: 1
   speed: 1
   direction: {x: 1, y: 0, z: 0}
   triggersBull: 0
