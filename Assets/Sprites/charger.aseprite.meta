@@ -123,15 +123,15 @@ ScriptedImporter:
   animatedSpriteImportData:
   - name: charger
     originalName: 
-    pivot: {x: 0.5, y: -0.07017544}
+    pivot: {x: 0.5, y: -0.054545455}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 32
-      height: 57
+      width: 42
+      height: 55
     spriteID: 3ad6a03fd3510ea419de39283bab26db
     spriteBone: []
     spriteOutline: []
@@ -153,10 +153,10 @@ ScriptedImporter:
     - name: charger
       frameIndex: 0
       cellRect:
-        x: 16
-        y: 4
-        width: 32
-        height: 57
+        x: 11
+        y: 3
+        width: 42
+        height: 55
       spriteId: 3ad6a03fd3510ea419de39283bab26db
     linkedCells: []
     parentIndex: -1

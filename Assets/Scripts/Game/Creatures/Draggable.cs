@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using Base;
 using Unity.VisualScripting;
@@ -17,6 +18,12 @@ namespace Game.Creatures
         private Vector3 startPosition;
         private bool isDragging;
         private bool isActive;
+        protected Animator _animator;
+
+        protected void Start()
+        {
+            _animator = GetComponent<Animator>();
+        }
 
         public void setDraggableActive(bool active)
         {
@@ -41,6 +48,7 @@ namespace Game.Creatures
             gameObject.layer = Layers.GHOST;
             isDragging = true;
             powerButton.RemoveCreature(gameObject);
+            _animator.Play("carry");
         }
 
         private void OnMouseDrag()
@@ -81,7 +89,7 @@ namespace Game.Creatures
             gameObject.layer = originalLayer;
             transform.position = getCellCenterWorld;
             powerButton.AddCreature(gameObject);
-
+            _animator.Play("sleep");
         }
 
         IEnumerator FlyBack()
@@ -95,10 +103,11 @@ namespace Game.Creatures
                 transform.position = position;
                 yield return new WaitForNextFrameUnit();
             }
-
+            
             isActive = true;
             isDragging = false;
             gameObject.layer = originalLayer;
+            _animator.Play("sleep");
         }
     }
 }

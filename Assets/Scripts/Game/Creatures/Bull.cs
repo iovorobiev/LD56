@@ -19,6 +19,7 @@ public class Bull : Draggable, Awakable
 
     private void Start()
     {
+        base.Start();
         originalParent = transform.parent;
         originalPosition = transform.position;
         if (currentMode == Mode.AWAITING)

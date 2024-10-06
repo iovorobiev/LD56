@@ -16,12 +16,28 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 1160356261127867848, guid: 48ac9ec80042b194793a268a221f6523, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 5e2afc150dec5b0429860b5ef38213d1, type: 2}
+    - target: {fileID: 3626916397498700004, guid: 48ac9ec80042b194793a268a221f6523, type: 3}
+      propertyPath: m_Size.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3626916397498700004, guid: 48ac9ec80042b194793a268a221f6523, type: 3}
+      propertyPath: m_Size.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3626916397498700004, guid: 48ac9ec80042b194793a268a221f6523, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 42e26a69611d84e4d94d5f68357f619f, type: 3}
+      objectReference: {fileID: -563772986, guid: 42e26a69611d84e4d94d5f68357f619f, type: 3}
     - target: {fileID: 3626916397498700004, guid: 48ac9ec80042b194793a268a221f6523, type: 3}
       propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3626916397498700004, guid: 48ac9ec80042b194793a268a221f6523, type: 3}
+      propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: 48ac9ec80042b194793a268a221f6523, type: 3}
@@ -95,7 +111,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2183b91038dfdd04ead5b6481755402e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  grid: {fileID: 0}
+  powerButton: {fileID: 0}
   speed: 5
+  currentMode: 3
 --- !u!61 &9058153653877366181
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -133,7 +152,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 1, y: 1}
-    newSize: {x: 0.65625, y: 0.640625}
+    newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0

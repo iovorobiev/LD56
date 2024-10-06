@@ -67,7 +67,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _EnableExternalAlpha: 0
-    - _Progress: 0.8491283
+    - _Progress: 1
     - _QueueControl: 0
     - _QueueOffset: 0
     - _progress: 1

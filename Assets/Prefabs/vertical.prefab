@@ -16,12 +16,28 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 1160356261127867848, guid: 7fe0fb7b2cb2de34694a126d693426b3, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 8ef2e2a86deb42c4a84ef62165f007eb, type: 2}
+    - target: {fileID: 3626916397498700004, guid: 7fe0fb7b2cb2de34694a126d693426b3, type: 3}
+      propertyPath: m_Size.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3626916397498700004, guid: 7fe0fb7b2cb2de34694a126d693426b3, type: 3}
+      propertyPath: m_Size.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3626916397498700004, guid: 7fe0fb7b2cb2de34694a126d693426b3, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 7e20be3f26a1afb40be3c0e21df90798, type: 3}
+      objectReference: {fileID: -1193961745, guid: 7e20be3f26a1afb40be3c0e21df90798, type: 3}
     - target: {fileID: 3626916397498700004, guid: 7fe0fb7b2cb2de34694a126d693426b3, type: 3}
       propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3626916397498700004, guid: 7fe0fb7b2cb2de34694a126d693426b3, type: 3}
+      propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: 7fe0fb7b2cb2de34694a126d693426b3, type: 3}
@@ -147,7 +163,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 1, y: 1}
-    newSize: {x: 0.26, y: 0.52}
+    newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0

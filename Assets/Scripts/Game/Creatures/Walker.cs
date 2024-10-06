@@ -19,6 +19,7 @@ public class Walker : Carriable, BullTrigger, ChargeConductor, Awakable
 
     private void Start()
     {
+        base.Start();
         originalPosition = transform.position;
         if (currentMode == Mode.AWAITING)
         {
@@ -43,7 +44,15 @@ public class Walker : Carriable, BullTrigger, ChargeConductor, Awakable
         if (other.gameObject.layer == Layers.WALL || other.gameObject.layer == Layers.CREATURES || other.gameObject.layer == Layers.BULL)
         {
             Debug.Log("With wall");
-            direction *= -1;    
+            direction *= -1;
+            if (direction == Vector3.left || direction == Vector3.right)
+            {
+                transform.localScale = new Vector3(
+                    transform.localScale.x * -1f, 
+                    transform.localScale.y, 
+                    transform.localScale.z);    
+            }
+            
         }
         
     }
@@ -52,6 +61,7 @@ public class Walker : Carriable, BullTrigger, ChargeConductor, Awakable
     {
         base.takenByBull(carryingBull);
         currentMode = Mode.CARRIED;
+        _animator.Play("carry");
     }
 
     public void OnTriggerEnter2D(Collider2D other)
@@ -84,6 +94,7 @@ public class Walker : Carriable, BullTrigger, ChargeConductor, Awakable
     {
         base.releasedByBull();
         currentMode = Mode.WALKING;
+        _animator.Play("walk");
     }
 
     public enum Mode
@@ -105,6 +116,7 @@ public class Walker : Carriable, BullTrigger, ChargeConductor, Awakable
         base.AwakeAndWork();
         Debug.Log("Awaking!");
         currentMode = Mode.WALKING;
+        _animator.Play("walk");
     }
 
     public void ResetPositionAndState()
