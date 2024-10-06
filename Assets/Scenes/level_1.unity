@@ -1052,6 +1052,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: mat
       objectReference: {fileID: 0}
+    - target: {fileID: 3626916397498700004, guid: 946fb890c0bcbb74c9285be72bb320da, type: 3}
+      propertyPath: m_SortingLayer
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3626916397498700004, guid: 946fb890c0bcbb74c9285be72bb320da, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3626916397498700004, guid: 946fb890c0bcbb74c9285be72bb320da, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1252296247
+      objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: 946fb890c0bcbb74c9285be72bb320da, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.75
@@ -2398,9 +2410,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 1252296247
+  m_SortingLayer: -1
+  m_SortingOrder: 2
   m_Sprite: {fileID: -1085138886, guid: d8c3e042f5cbb2c45b238a606b1cc9ef, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
