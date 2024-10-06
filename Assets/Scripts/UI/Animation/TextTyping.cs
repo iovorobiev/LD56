@@ -10,6 +10,7 @@ namespace ui
         public float typeDelay;
         private TextMeshProUGUI tmp;
         private AudioSource _typeSound;
+        private Coroutine lastCoroutine;
 
         private void Start()
         {
@@ -21,7 +22,11 @@ namespace ui
 
         public void animateText(String text)
         {
-            StartCoroutine(AnimateText(text));
+            if (lastCoroutine != null)
+            {
+                StopCoroutine(lastCoroutine);
+            }
+            lastCoroutine = StartCoroutine(AnimateText(text));
         }
 
         private IEnumerator AnimateText(String text)

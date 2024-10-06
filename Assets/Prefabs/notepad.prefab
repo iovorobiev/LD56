@@ -1109,17 +1109,16 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'No one knows is their name Right Leftwalker or Left Rightwalker, the only
-    thing we know about this creature is that it can only go left or right.
+  m_text: 'No one knows if their name is Right Leftwalker or Left Rightwalker, the
+    only thing we know is that it can only go left or right.
 
 
-    Right
-    Leftwalkers are well-known introverts and change their direction anytime they
-    encounter other creatures.
+    Right Leftwalkers
+    are well-known introverts and change their direction anytime they encounter other
+    creatures.
 
 
-    They will carry electrical charge if they find
-    it.'
+    They will carry electrical charge if they find it.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6fde0e2372dcdf84ebcbcad3db00e256, type: 2}
   m_sharedMaterial: {fileID: -4700785792969706240, guid: 6fde0e2372dcdf84ebcbcad3db00e256, type: 2}
@@ -1328,14 +1327,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Some say the person who name this didn''t have id to come up with a better
-    name due to too much jam in his jar or something like that.
-
-
-    Anyway, if
-    one needs to pass, just press a button that will heat Mr. Icy. Once it''s transparent
-    anyone can pass. Press the button once more and it will freeze again and block
-    your way'
+  m_text: If one needs to pass, just press a button that will heat Mr. Icy. Once
+    it's transparent anyone can pass. Press the button once more and it will freeze
+    again and block your way
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6fde0e2372dcdf84ebcbcad3db00e256, type: 2}
   m_sharedMaterial: {fileID: -4700785792969706240, guid: 6fde0e2372dcdf84ebcbcad3db00e256, type: 2}

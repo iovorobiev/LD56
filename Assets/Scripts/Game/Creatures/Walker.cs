@@ -26,6 +26,11 @@ public class Walker : Carriable, BullTrigger, ChargeConductor, Awakable
         {
             setDraggableActive(draggableFromStart);
         }
+
+        if (currentMode == Mode.WALKING)
+        {
+            _animator.Play("walk");
+        }
     }
 
     public override void PausableUpdate()
