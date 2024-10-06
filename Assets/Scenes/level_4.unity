@@ -3937,6 +3937,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 923987812}
     m_Modifications:
+    - target: {fileID: 2946897210134548110, guid: bd6532d33a9dce042bae5431c87de7ed, type: 3}
+      propertyPath: pageSwitcher
+      value: 
+      objectReference: {fileID: 1902837040}
     - target: {fileID: 5110707403378541911, guid: bd6532d33a9dce042bae5431c87de7ed, type: 3}
       propertyPath: m_Name
       value: Door
@@ -4145,7 +4149,7 @@ PrefabInstance:
       objectReference: {fileID: 782977161}
     - target: {fileID: 6606227631840078371, guid: 2b8caed8563be094f9230fb70a6dedc3, type: 3}
       propertyPath: currentLevel
-      value: 4
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7020190527614426041, guid: 2b8caed8563be094f9230fb70a6dedc3, type: 3}
       propertyPath: m_Name

@@ -3653,6 +3653,10 @@ PrefabInstance:
       propertyPath: powerButton
       value: 
       objectReference: {fileID: 1559377312}
+    - target: {fileID: 3776557136688499153, guid: d36ee1a8fe015474c8ee598d0c2f81c9, type: 3}
+      propertyPath: draggableFromStart
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3843173472787390220, guid: d36ee1a8fe015474c8ee598d0c2f81c9, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.3300002
@@ -3716,7 +3720,7 @@ PrefabInstance:
       objectReference: {fileID: 782977161}
     - target: {fileID: 6606227631840078371, guid: 2b8caed8563be094f9230fb70a6dedc3, type: 3}
       propertyPath: currentLevel
-      value: 3
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7020190527614426041, guid: 2b8caed8563be094f9230fb70a6dedc3, type: 3}
       propertyPath: m_Name

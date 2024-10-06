@@ -16,6 +16,7 @@ public class Walker : Carriable, BullTrigger, ChargeConductor, Awakable
     private GameObject charge;
 
     private Vector3 originalPosition;
+    public bool draggableFromStart = true;
 
     private void Start()
     {
@@ -23,7 +24,7 @@ public class Walker : Carriable, BullTrigger, ChargeConductor, Awakable
         originalPosition = transform.position;
         if (currentMode == Mode.AWAITING)
         {
-            setDraggableActive(true);
+            setDraggableActive(draggableFromStart);
         }
     }
 
